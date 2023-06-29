@@ -3,6 +3,7 @@ import './App.css'
 import axios from 'axios';
 import './Loading.css'
 import Loading from './components/Loading';
+import { StyledButton, Container } from './StyledComponents.style';
 
 function App() {
   const [slips, setSlips] = useState({});
@@ -26,15 +27,15 @@ function App() {
   }, [slips]);
 
   return (
-    <div class="container">
+    <Container>
       <h1>Click on the button to general a county</h1>
       <div class="content">
         <h2>{slips.advice}</h2>
         {removeLoading && <Loading/>}
       </div>
         <br/>
-      <button className="button" onClick={() => setSlips({})}>Click-me</button>
-    </div>
+      <StyledButton onClick={() => setSlips({})}>Click-me</StyledButton>
+    </Container>
 
   );
 }
